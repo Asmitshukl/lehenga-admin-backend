@@ -68,4 +68,15 @@ export declare const CheckoutPaymentAttemptStatus: {
     readonly EXPIRED: "EXPIRED";
 };
 export type CheckoutPaymentAttemptStatus = (typeof CheckoutPaymentAttemptStatus)[keyof typeof CheckoutPaymentAttemptStatus];
+export declare const InvoiceStatus: {
+    readonly ISSUED: "ISSUED";
+    readonly CANCELLED: "CANCELLED";
+};
+export type InvoiceStatus = (typeof InvoiceStatus)[keyof typeof InvoiceStatus];
+export declare const InvoicePaymentStatus: {
+    readonly PENDING: "PENDING";
+    readonly PARTIAL: "PARTIAL";
+    readonly PAID: "PAID";
+};
+export type InvoicePaymentStatus = (typeof InvoicePaymentStatus)[keyof typeof InvoicePaymentStatus];
 //# sourceMappingURL=enums.d.ts.map

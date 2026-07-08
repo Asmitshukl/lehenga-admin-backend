@@ -6,6 +6,7 @@ import { invalidateCatalogCacheAfterMutation } from "../middleware/catalog-cache
 import { authRouter } from "./auth.routes.js";
 import { categoriesRouter } from "./categories.routes.js";
 import { customersRouter } from "./customers.routes.js";
+import { invoicesRouter } from "./invoices.routes.js";
 import { jewelleryRouter } from "./jewellery.routes.js";
 import { lehengasRouter } from "./lehengas.routes.js";
 import { ordersRouter } from "./orders.routes.js";
@@ -27,6 +28,7 @@ apiRouter.use("/admin/categories", requireAdmin, invalidateCatalogCacheAfterMuta
 apiRouter.use("/admin/lehengas", requireAdmin, invalidateCatalogCacheAfterMutation, lehengasRouter);
 apiRouter.use("/admin/jewellery", requireAdmin, invalidateCatalogCacheAfterMutation, jewelleryRouter);
 apiRouter.use("/admin/customers", requireAdmin, customersRouter);
+apiRouter.use("/admin/invoices", requireAdmin, invoicesRouter);
 apiRouter.use(
   "/admin/orders",
   requireAdmin,

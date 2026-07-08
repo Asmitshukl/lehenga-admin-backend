@@ -82,6 +82,17 @@ enum CheckoutPaymentAttemptStatus {
   EXPIRED
 }
 
+enum InvoiceStatus {
+  ISSUED
+  CANCELLED
+}
+
+enum InvoicePaymentStatus {
+  PENDING
+  PARTIAL
+  PAID
+}
+
 model AdminUser {
   id            String        @id @default(cuid())
   name          String
@@ -93,6 +104,7 @@ model AdminUser {
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   createdOrders RentalOrder[] @relation("OrderCreatedByAdmin")
+  createdInvoices Invoice[]   @relation("InvoiceCreatedByAdmin")
 }
 
 model Customer {
@@ -294,6 +306,7 @@ model RentalOrder {
   specialInstructions String?
   internalNotes       String?
   items               RentalOrderItem[]
+  invoice             Invoice?
   paymentAttempt      CheckoutPaymentAttempt?
   createdAt           DateTime          @default(now())
   updatedAt           DateTime          @updatedAt
@@ -356,6 +369,72 @@ model RentalOrderItem {
   @@index([lehengaId])
   @@index([jewelleryId])
   @@index([lehengaSizeId])
+}
+
+model Invoice {
+  id                   String               @id @default(cuid())
+  invoiceNumber        String               @unique
+  orderId              String               @unique
+  order                RentalOrder          @relation(fields: [orderId], references: [id], onDelete: Restrict)
+  createdByAdminId     String?
+  createdByAdmin       AdminUser?           @relation("InvoiceCreatedByAdmin", fields: [createdByAdminId], references: [id], onDelete: SetNull)
+  status               InvoiceStatus        @default(ISSUED)
+  paymentStatus        InvoicePaymentStatus @default(PENDING)
+  invoiceDate          DateTime             @default(now())
+  businessName         String
+  businessLogoUrl      String?
+  businessAddress      String
+  businessPhone        String?
+  businessEmail        String?
+  customerName         String
+  customerPhone        String
+  customerEmail        String?
+  orderNumberSnapshot  String
+  rentalFee            Decimal              @db.Decimal(12, 2)
+  securityDeposit      Decimal              @default(0) @db.Decimal(12, 2)
+  dryCleaningCharge    Decimal              @default(0) @db.Decimal(12, 2)
+  alterationCharge     Decimal              @default(0) @db.Decimal(12, 2)
+  deliveryCharge       Decimal              @default(0) @db.Decimal(12, 2)
+  otherCharge          Decimal              @default(0) @db.Decimal(12, 2)
+  discountAmount       Decimal              @default(0) @db.Decimal(12, 2)
+  totalPayable         Decimal              @db.Decimal(12, 2)
+  amountPaid           Decimal              @default(0) @db.Decimal(12, 2)
+  balanceDue           Decimal              @default(0) @db.Decimal(12, 2)
+  paymentMode          String?
+  returnDateTime       DateTime?
+  lateFeePolicy        String
+  conditionNotes       String?
+  damagePolicy         String
+  cancellationPolicy   String
+  acknowledgementName  String?
+  lineItems            InvoiceLineItem[]
+  createdAt            DateTime             @default(now())
+  updatedAt            DateTime             @updatedAt
+
+  @@index([createdByAdminId])
+  @@index([invoiceDate])
+  @@index([paymentStatus])
+}
+
+model InvoiceLineItem {
+  id                  String         @id @default(cuid())
+  invoiceId           String
+  invoice             Invoice        @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  itemType            RentalItemType
+  productNameSnapshot String
+  skuSnapshot         String
+  imageUrlSnapshot    String?
+  sizeLabelSnapshot   String?
+  quantity            Int            @default(1)
+  rentalStartDate     DateTime
+  rentalEndDate       DateTime
+  rentalDays          Int
+  rentalPricePerDay   Decimal        @db.Decimal(10, 2)
+  lineTotal           Decimal        @db.Decimal(12, 2)
+  depositAmount       Decimal        @default(0) @db.Decimal(12, 2)
+  createdAt           DateTime       @default(now())
+
+  @@index([invoiceId])
 }
 
 model ProductReview {

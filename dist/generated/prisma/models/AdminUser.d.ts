@@ -171,6 +171,7 @@ export type AdminUserWhereInput = {
     createdAt?: Prisma.DateTimeFilter<"AdminUser"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"AdminUser"> | Date | string;
     createdOrders?: Prisma.RentalOrderListRelationFilter;
+    createdInvoices?: Prisma.InvoiceListRelationFilter;
 };
 export type AdminUserOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
@@ -183,6 +184,7 @@ export type AdminUserOrderByWithRelationInput = {
     createdAt?: Prisma.SortOrder;
     updatedAt?: Prisma.SortOrder;
     createdOrders?: Prisma.RentalOrderOrderByRelationAggregateInput;
+    createdInvoices?: Prisma.InvoiceOrderByRelationAggregateInput;
 };
 export type AdminUserWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -198,6 +200,7 @@ export type AdminUserWhereUniqueInput = Prisma.AtLeast<{
     createdAt?: Prisma.DateTimeFilter<"AdminUser"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"AdminUser"> | Date | string;
     createdOrders?: Prisma.RentalOrderListRelationFilter;
+    createdInvoices?: Prisma.InvoiceListRelationFilter;
 }, "id" | "email" | "phone">;
 export type AdminUserOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
@@ -238,6 +241,7 @@ export type AdminUserCreateInput = {
     createdAt?: Date | string;
     updatedAt?: Date | string;
     createdOrders?: Prisma.RentalOrderCreateNestedManyWithoutCreatedByAdminInput;
+    createdInvoices?: Prisma.InvoiceCreateNestedManyWithoutCreatedByAdminInput;
 };
 export type AdminUserUncheckedCreateInput = {
     id?: string;
@@ -250,6 +254,7 @@ export type AdminUserUncheckedCreateInput = {
     createdAt?: Date | string;
     updatedAt?: Date | string;
     createdOrders?: Prisma.RentalOrderUncheckedCreateNestedManyWithoutCreatedByAdminInput;
+    createdInvoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCreatedByAdminInput;
 };
 export type AdminUserUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -262,6 +267,7 @@ export type AdminUserUpdateInput = {
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     createdOrders?: Prisma.RentalOrderUpdateManyWithoutCreatedByAdminNestedInput;
+    createdInvoices?: Prisma.InvoiceUpdateManyWithoutCreatedByAdminNestedInput;
 };
 export type AdminUserUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -274,6 +280,7 @@ export type AdminUserUncheckedUpdateInput = {
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     createdOrders?: Prisma.RentalOrderUncheckedUpdateManyWithoutCreatedByAdminNestedInput;
+    createdInvoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCreatedByAdminNestedInput;
 };
 export type AdminUserCreateManyInput = {
     id?: string;
@@ -374,6 +381,20 @@ export type AdminUserUpdateOneWithoutCreatedOrdersNestedInput = {
     connect?: Prisma.AdminUserWhereUniqueInput;
     update?: Prisma.XOR<Prisma.XOR<Prisma.AdminUserUpdateToOneWithWhereWithoutCreatedOrdersInput, Prisma.AdminUserUpdateWithoutCreatedOrdersInput>, Prisma.AdminUserUncheckedUpdateWithoutCreatedOrdersInput>;
 };
+export type AdminUserCreateNestedOneWithoutCreatedInvoicesInput = {
+    create?: Prisma.XOR<Prisma.AdminUserCreateWithoutCreatedInvoicesInput, Prisma.AdminUserUncheckedCreateWithoutCreatedInvoicesInput>;
+    connectOrCreate?: Prisma.AdminUserCreateOrConnectWithoutCreatedInvoicesInput;
+    connect?: Prisma.AdminUserWhereUniqueInput;
+};
+export type AdminUserUpdateOneWithoutCreatedInvoicesNestedInput = {
+    create?: Prisma.XOR<Prisma.AdminUserCreateWithoutCreatedInvoicesInput, Prisma.AdminUserUncheckedCreateWithoutCreatedInvoicesInput>;
+    connectOrCreate?: Prisma.AdminUserCreateOrConnectWithoutCreatedInvoicesInput;
+    upsert?: Prisma.AdminUserUpsertWithoutCreatedInvoicesInput;
+    disconnect?: Prisma.AdminUserWhereInput | boolean;
+    delete?: Prisma.AdminUserWhereInput | boolean;
+    connect?: Prisma.AdminUserWhereUniqueInput;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.AdminUserUpdateToOneWithWhereWithoutCreatedInvoicesInput, Prisma.AdminUserUpdateWithoutCreatedInvoicesInput>, Prisma.AdminUserUncheckedUpdateWithoutCreatedInvoicesInput>;
+};
 export type AdminUserCreateWithoutCreatedOrdersInput = {
     id?: string;
     name: string;
@@ -384,6 +405,7 @@ export type AdminUserCreateWithoutCreatedOrdersInput = {
     lastLoginAt?: Date | string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    createdInvoices?: Prisma.InvoiceCreateNestedManyWithoutCreatedByAdminInput;
 };
 export type AdminUserUncheckedCreateWithoutCreatedOrdersInput = {
     id?: string;
@@ -395,6 +417,7 @@ export type AdminUserUncheckedCreateWithoutCreatedOrdersInput = {
     lastLoginAt?: Date | string | null;
     createdAt?: Date | string;
     updatedAt?: Date | string;
+    createdInvoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutCreatedByAdminInput;
 };
 export type AdminUserCreateOrConnectWithoutCreatedOrdersInput = {
     where: Prisma.AdminUserWhereUniqueInput;
@@ -419,6 +442,7 @@ export type AdminUserUpdateWithoutCreatedOrdersInput = {
     lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    createdInvoices?: Prisma.InvoiceUpdateManyWithoutCreatedByAdminNestedInput;
 };
 export type AdminUserUncheckedUpdateWithoutCreatedOrdersInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -430,15 +454,79 @@ export type AdminUserUncheckedUpdateWithoutCreatedOrdersInput = {
     lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    createdInvoices?: Prisma.InvoiceUncheckedUpdateManyWithoutCreatedByAdminNestedInput;
+};
+export type AdminUserCreateWithoutCreatedInvoicesInput = {
+    id?: string;
+    name: string;
+    email: string;
+    passwordHash: string;
+    phone?: string | null;
+    isActive?: boolean;
+    lastLoginAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    createdOrders?: Prisma.RentalOrderCreateNestedManyWithoutCreatedByAdminInput;
+};
+export type AdminUserUncheckedCreateWithoutCreatedInvoicesInput = {
+    id?: string;
+    name: string;
+    email: string;
+    passwordHash: string;
+    phone?: string | null;
+    isActive?: boolean;
+    lastLoginAt?: Date | string | null;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+    createdOrders?: Prisma.RentalOrderUncheckedCreateNestedManyWithoutCreatedByAdminInput;
+};
+export type AdminUserCreateOrConnectWithoutCreatedInvoicesInput = {
+    where: Prisma.AdminUserWhereUniqueInput;
+    create: Prisma.XOR<Prisma.AdminUserCreateWithoutCreatedInvoicesInput, Prisma.AdminUserUncheckedCreateWithoutCreatedInvoicesInput>;
+};
+export type AdminUserUpsertWithoutCreatedInvoicesInput = {
+    update: Prisma.XOR<Prisma.AdminUserUpdateWithoutCreatedInvoicesInput, Prisma.AdminUserUncheckedUpdateWithoutCreatedInvoicesInput>;
+    create: Prisma.XOR<Prisma.AdminUserCreateWithoutCreatedInvoicesInput, Prisma.AdminUserUncheckedCreateWithoutCreatedInvoicesInput>;
+    where?: Prisma.AdminUserWhereInput;
+};
+export type AdminUserUpdateToOneWithWhereWithoutCreatedInvoicesInput = {
+    where?: Prisma.AdminUserWhereInput;
+    data: Prisma.XOR<Prisma.AdminUserUpdateWithoutCreatedInvoicesInput, Prisma.AdminUserUncheckedUpdateWithoutCreatedInvoicesInput>;
+};
+export type AdminUserUpdateWithoutCreatedInvoicesInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    name?: Prisma.StringFieldUpdateOperationsInput | string;
+    email?: Prisma.StringFieldUpdateOperationsInput | string;
+    passwordHash?: Prisma.StringFieldUpdateOperationsInput | string;
+    phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    createdOrders?: Prisma.RentalOrderUpdateManyWithoutCreatedByAdminNestedInput;
+};
+export type AdminUserUncheckedUpdateWithoutCreatedInvoicesInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    name?: Prisma.StringFieldUpdateOperationsInput | string;
+    email?: Prisma.StringFieldUpdateOperationsInput | string;
+    passwordHash?: Prisma.StringFieldUpdateOperationsInput | string;
+    phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+    isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+    createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+    createdOrders?: Prisma.RentalOrderUncheckedUpdateManyWithoutCreatedByAdminNestedInput;
 };
 /**
  * Count Type AdminUserCountOutputType
  */
 export type AdminUserCountOutputType = {
     createdOrders: number;
+    createdInvoices: number;
 };
 export type AdminUserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     createdOrders?: boolean | AdminUserCountOutputTypeCountCreatedOrdersArgs;
+    createdInvoices?: boolean | AdminUserCountOutputTypeCountCreatedInvoicesArgs;
 };
 /**
  * AdminUserCountOutputType without action
@@ -455,6 +543,12 @@ export type AdminUserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ex
 export type AdminUserCountOutputTypeCountCreatedOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     where?: Prisma.RentalOrderWhereInput;
 };
+/**
+ * AdminUserCountOutputType without action
+ */
+export type AdminUserCountOutputTypeCountCreatedInvoicesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.InvoiceWhereInput;
+};
 export type AdminUserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
     id?: boolean;
     name?: boolean;
@@ -466,6 +560,7 @@ export type AdminUserSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
     createdAt?: boolean;
     updatedAt?: boolean;
     createdOrders?: boolean | Prisma.AdminUser$createdOrdersArgs<ExtArgs>;
+    createdInvoices?: boolean | Prisma.AdminUser$createdInvoicesArgs<ExtArgs>;
     _count?: boolean | Prisma.AdminUserCountOutputTypeDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["adminUser"]>;
 export type AdminUserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -504,6 +599,7 @@ export type AdminUserSelectScalar = {
 export type AdminUserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "passwordHash" | "phone" | "isActive" | "lastLoginAt" | "createdAt" | "updatedAt", ExtArgs["result"]["adminUser"]>;
 export type AdminUserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     createdOrders?: boolean | Prisma.AdminUser$createdOrdersArgs<ExtArgs>;
+    createdInvoices?: boolean | Prisma.AdminUser$createdInvoicesArgs<ExtArgs>;
     _count?: boolean | Prisma.AdminUserCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type AdminUserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
@@ -512,6 +608,7 @@ export type $AdminUserPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     name: "AdminUser";
     objects: {
         createdOrders: Prisma.$RentalOrderPayload<ExtArgs>[];
+        createdInvoices: Prisma.$InvoicePayload<ExtArgs>[];
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
@@ -853,6 +950,7 @@ export interface AdminUserDelegate<ExtArgs extends runtime.Types.Extensions.Inte
 export interface Prisma__AdminUserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise";
     createdOrders<T extends Prisma.AdminUser$createdOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AdminUser$createdOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RentalOrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    createdInvoices<T extends Prisma.AdminUser$createdInvoicesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AdminUser$createdInvoicesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvoicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1284,6 +1382,29 @@ export type AdminUser$createdOrdersArgs<ExtArgs extends runtime.Types.Extensions
     take?: number;
     skip?: number;
     distinct?: Prisma.RentalOrderScalarFieldEnum | Prisma.RentalOrderScalarFieldEnum[];
+};
+/**
+ * AdminUser.createdInvoices
+ */
+export type AdminUser$createdInvoicesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Invoice
+     */
+    select?: Prisma.InvoiceSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Invoice
+     */
+    omit?: Prisma.InvoiceOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.InvoiceInclude<ExtArgs> | null;
+    where?: Prisma.InvoiceWhereInput;
+    orderBy?: Prisma.InvoiceOrderByWithRelationInput | Prisma.InvoiceOrderByWithRelationInput[];
+    cursor?: Prisma.InvoiceWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.InvoiceScalarFieldEnum | Prisma.InvoiceScalarFieldEnum[];
 };
 /**
  * AdminUser without action

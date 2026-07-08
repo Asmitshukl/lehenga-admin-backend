@@ -250,6 +250,28 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
         omit: OmitOpts;
     }>;
     /**
+     * `prisma.invoice`: Exposes CRUD operations for the **Invoice** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Invoices
+      * const invoices = await prisma.invoice.findMany()
+      * ```
+      */
+    get invoice(): Prisma.InvoiceDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.invoiceLineItem`: Exposes CRUD operations for the **InvoiceLineItem** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more InvoiceLineItems
+      * const invoiceLineItems = await prisma.invoiceLineItem.findMany()
+      * ```
+      */
+    get invoiceLineItem(): Prisma.InvoiceLineItemDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
      * `prisma.productReview`: Exposes CRUD operations for the **ProductReview** model.
       * Example usage:
       * ```ts

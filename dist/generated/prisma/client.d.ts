@@ -82,6 +82,16 @@ export type CheckoutPaymentAttempt = Prisma.CheckoutPaymentAttemptModel;
  */
 export type RentalOrderItem = Prisma.RentalOrderItemModel;
 /**
+ * Model Invoice
+ *
+ */
+export type Invoice = Prisma.InvoiceModel;
+/**
+ * Model InvoiceLineItem
+ *
+ */
+export type InvoiceLineItem = Prisma.InvoiceLineItemModel;
+/**
  * Model ProductReview
  *
  */

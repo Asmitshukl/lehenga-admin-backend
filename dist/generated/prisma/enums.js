@@ -68,4 +68,13 @@ export const CheckoutPaymentAttemptStatus = {
     CANCELLED: 'CANCELLED',
     EXPIRED: 'EXPIRED'
 };
+export const InvoiceStatus = {
+    ISSUED: 'ISSUED',
+    CANCELLED: 'CANCELLED'
+};
+export const InvoicePaymentStatus = {
+    PENDING: 'PENDING',
+    PARTIAL: 'PARTIAL',
+    PAID: 'PAID'
+};
 //# sourceMappingURL=enums.js.map

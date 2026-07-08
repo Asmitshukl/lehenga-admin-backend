@@ -51,6 +51,8 @@ export const ModelName = {
     RentalOrder: 'RentalOrder',
     CheckoutPaymentAttempt: 'CheckoutPaymentAttempt',
     RentalOrderItem: 'RentalOrderItem',
+    Invoice: 'Invoice',
+    InvoiceLineItem: 'InvoiceLineItem',
     ProductReview: 'ProductReview'
 };
 /*
@@ -266,6 +268,60 @@ export const RentalOrderItemScalarFieldEnum = {
     measurementArmHole: 'measurementArmHole',
     measurementMori: 'measurementMori',
     measurementNotes: 'measurementNotes',
+    createdAt: 'createdAt'
+};
+export const InvoiceScalarFieldEnum = {
+    id: 'id',
+    invoiceNumber: 'invoiceNumber',
+    orderId: 'orderId',
+    createdByAdminId: 'createdByAdminId',
+    status: 'status',
+    paymentStatus: 'paymentStatus',
+    invoiceDate: 'invoiceDate',
+    businessName: 'businessName',
+    businessLogoUrl: 'businessLogoUrl',
+    businessAddress: 'businessAddress',
+    businessPhone: 'businessPhone',
+    businessEmail: 'businessEmail',
+    customerName: 'customerName',
+    customerPhone: 'customerPhone',
+    customerEmail: 'customerEmail',
+    orderNumberSnapshot: 'orderNumberSnapshot',
+    rentalFee: 'rentalFee',
+    securityDeposit: 'securityDeposit',
+    dryCleaningCharge: 'dryCleaningCharge',
+    alterationCharge: 'alterationCharge',
+    deliveryCharge: 'deliveryCharge',
+    otherCharge: 'otherCharge',
+    discountAmount: 'discountAmount',
+    totalPayable: 'totalPayable',
+    amountPaid: 'amountPaid',
+    balanceDue: 'balanceDue',
+    paymentMode: 'paymentMode',
+    returnDateTime: 'returnDateTime',
+    lateFeePolicy: 'lateFeePolicy',
+    conditionNotes: 'conditionNotes',
+    damagePolicy: 'damagePolicy',
+    cancellationPolicy: 'cancellationPolicy',
+    acknowledgementName: 'acknowledgementName',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+export const InvoiceLineItemScalarFieldEnum = {
+    id: 'id',
+    invoiceId: 'invoiceId',
+    itemType: 'itemType',
+    productNameSnapshot: 'productNameSnapshot',
+    skuSnapshot: 'skuSnapshot',
+    imageUrlSnapshot: 'imageUrlSnapshot',
+    sizeLabelSnapshot: 'sizeLabelSnapshot',
+    quantity: 'quantity',
+    rentalStartDate: 'rentalStartDate',
+    rentalEndDate: 'rentalEndDate',
+    rentalDays: 'rentalDays',
+    rentalPricePerDay: 'rentalPricePerDay',
+    lineTotal: 'lineTotal',
+    depositAmount: 'depositAmount',
     createdAt: 'createdAt'
 };
 export const ProductReviewScalarFieldEnum = {
