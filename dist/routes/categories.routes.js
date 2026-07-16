@@ -11,6 +11,7 @@ const categoryLabels = {
     BRIDAL: "Bridal",
     SEMI_BRIDAL: "Semi Bridal",
     GOWN: "Gown",
+    KHADI: "Khadi",
     JEWELLERY: "Jewellery",
 };
 export const categoriesRouter = Router();

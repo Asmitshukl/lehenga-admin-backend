@@ -10,6 +10,7 @@ const categoryLabels = {
     BRIDAL: "Bridal",
     SEMI_BRIDAL: "Semi Bridal",
     GOWN: "Gown",
+    KHADI: "Khadi",
     JEWELLERY: "Jewellery",
 };
 function readArg(name) {

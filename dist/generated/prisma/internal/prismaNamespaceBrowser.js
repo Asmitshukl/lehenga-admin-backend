@@ -118,6 +118,7 @@ export const LehengaScalarFieldEnum = {
     pickupAvailable: 'pickupAvailable',
     status: 'status',
     isFeatured: 'isFeatured',
+    isLatest: 'isLatest',
     isCategoryFeatured: 'isCategoryFeatured',
     categoryId: 'categoryId',
     createdAt: 'createdAt',

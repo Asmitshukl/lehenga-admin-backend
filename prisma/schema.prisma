@@ -22,6 +22,7 @@ enum CategoryStyle {
   BRIDAL
   SEMI_BRIDAL
   GOWN
+  KHADI
   JEWELLERY
 }
 
@@ -156,6 +157,7 @@ model Lehenga {
   pickupAvailable   Boolean           @default(true)
   status            ProductStatus     @default(DRAFT)
   isFeatured        Boolean           @default(false)
+  isLatest          Boolean           @default(false)
   isCategoryFeatured Boolean          @default(false)
   categoryId        String?
   category          Category?         @relation(fields: [categoryId], references: [id], onDelete: SetNull)
@@ -169,6 +171,7 @@ model Lehenga {
   @@index([categoryId])
   @@index([status])
   @@index([isFeatured])
+  @@index([isLatest])
   @@index([isCategoryFeatured])
 }
 

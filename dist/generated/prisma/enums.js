@@ -16,6 +16,7 @@ export const CategoryStyle = {
     BRIDAL: 'BRIDAL',
     SEMI_BRIDAL: 'SEMI_BRIDAL',
     GOWN: 'GOWN',
+    KHADI: 'KHADI',
     JEWELLERY: 'JEWELLERY'
 };
 export const JewelleryType = {

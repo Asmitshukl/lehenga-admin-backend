@@ -33,6 +33,7 @@ const categoryLabels: Record<CategoryStyle, string> = {
   BRIDAL: "Bridal",
   SEMI_BRIDAL: "Semi Bridal",
   GOWN: "Gown",
+  KHADI: "Khadi",
   JEWELLERY: "Jewellery",
 };
 

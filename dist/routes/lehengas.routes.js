@@ -72,6 +72,7 @@ lehengasRouter.post("/", asyncHandler(async (request, response) => {
         pickupAvailable: getOptionalBoolean(body, "pickupAvailable") ?? true,
         status: getOptionalEnum(body, "status", Object.values(ProductStatus)) ?? ProductStatus.DRAFT,
         isFeatured: getOptionalBoolean(body, "isFeatured") ?? false,
+        isLatest: getOptionalBoolean(body, "isLatest") ?? false,
         isCategoryFeatured: getOptionalBoolean(body, "isCategoryFeatured") ?? false,
         images: {
             create: images,
@@ -191,6 +192,7 @@ lehengasRouter.patch("/:id", asyncHandler(async (request, response) => {
     const pickupAvailable = getOptionalBoolean(body, "pickupAvailable");
     const status = getOptionalEnum(body, "status", Object.values(ProductStatus));
     const isFeatured = getOptionalBoolean(body, "isFeatured");
+    const isLatest = getOptionalBoolean(body, "isLatest");
     const isCategoryFeatured = getOptionalBoolean(body, "isCategoryFeatured");
     if (sku !== undefined)
         data.sku = sku;
@@ -226,6 +228,8 @@ lehengasRouter.patch("/:id", asyncHandler(async (request, response) => {
         data.status = status;
     if (isFeatured !== undefined)
         data.isFeatured = isFeatured;
+    if (isLatest !== undefined)
+        data.isLatest = isLatest;
     if (isCategoryFeatured !== undefined)
         data.isCategoryFeatured = isCategoryFeatured;
     if (Object.prototype.hasOwnProperty.call(body, "categoryId")) {

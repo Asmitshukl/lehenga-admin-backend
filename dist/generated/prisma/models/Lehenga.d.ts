@@ -49,6 +49,7 @@ export type LehengaMinAggregateOutputType = {
     pickupAvailable: boolean | null;
     status: $Enums.ProductStatus | null;
     isFeatured: boolean | null;
+    isLatest: boolean | null;
     isCategoryFeatured: boolean | null;
     categoryId: string | null;
     createdAt: Date | null;
@@ -76,6 +77,7 @@ export type LehengaMaxAggregateOutputType = {
     pickupAvailable: boolean | null;
     status: $Enums.ProductStatus | null;
     isFeatured: boolean | null;
+    isLatest: boolean | null;
     isCategoryFeatured: boolean | null;
     categoryId: string | null;
     createdAt: Date | null;
@@ -103,6 +105,7 @@ export type LehengaCountAggregateOutputType = {
     pickupAvailable: number;
     status: number;
     isFeatured: number;
+    isLatest: number;
     isCategoryFeatured: number;
     categoryId: number;
     createdAt: number;
@@ -145,6 +148,7 @@ export type LehengaMinAggregateInputType = {
     pickupAvailable?: true;
     status?: true;
     isFeatured?: true;
+    isLatest?: true;
     isCategoryFeatured?: true;
     categoryId?: true;
     createdAt?: true;
@@ -172,6 +176,7 @@ export type LehengaMaxAggregateInputType = {
     pickupAvailable?: true;
     status?: true;
     isFeatured?: true;
+    isLatest?: true;
     isCategoryFeatured?: true;
     categoryId?: true;
     createdAt?: true;
@@ -199,6 +204,7 @@ export type LehengaCountAggregateInputType = {
     pickupAvailable?: true;
     status?: true;
     isFeatured?: true;
+    isLatest?: true;
     isCategoryFeatured?: true;
     categoryId?: true;
     createdAt?: true;
@@ -303,6 +309,7 @@ export type LehengaGroupByOutputType = {
     pickupAvailable: boolean;
     status: $Enums.ProductStatus;
     isFeatured: boolean;
+    isLatest: boolean;
     isCategoryFeatured: boolean;
     categoryId: string | null;
     createdAt: Date;
@@ -341,6 +348,7 @@ export type LehengaWhereInput = {
     pickupAvailable?: Prisma.BoolFilter<"Lehenga"> | boolean;
     status?: Prisma.EnumProductStatusFilter<"Lehenga"> | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFilter<"Lehenga"> | boolean;
+    isLatest?: Prisma.BoolFilter<"Lehenga"> | boolean;
     isCategoryFeatured?: Prisma.BoolFilter<"Lehenga"> | boolean;
     categoryId?: Prisma.StringNullableFilter<"Lehenga"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"Lehenga"> | Date | string;
@@ -373,6 +381,7 @@ export type LehengaOrderByWithRelationInput = {
     pickupAvailable?: Prisma.SortOrder;
     status?: Prisma.SortOrder;
     isFeatured?: Prisma.SortOrder;
+    isLatest?: Prisma.SortOrder;
     isCategoryFeatured?: Prisma.SortOrder;
     categoryId?: Prisma.SortOrderInput | Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -408,6 +417,7 @@ export type LehengaWhereUniqueInput = Prisma.AtLeast<{
     pickupAvailable?: Prisma.BoolFilter<"Lehenga"> | boolean;
     status?: Prisma.EnumProductStatusFilter<"Lehenga"> | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFilter<"Lehenga"> | boolean;
+    isLatest?: Prisma.BoolFilter<"Lehenga"> | boolean;
     isCategoryFeatured?: Prisma.BoolFilter<"Lehenga"> | boolean;
     categoryId?: Prisma.StringNullableFilter<"Lehenga"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"Lehenga"> | Date | string;
@@ -440,6 +450,7 @@ export type LehengaOrderByWithAggregationInput = {
     pickupAvailable?: Prisma.SortOrder;
     status?: Prisma.SortOrder;
     isFeatured?: Prisma.SortOrder;
+    isLatest?: Prisma.SortOrder;
     isCategoryFeatured?: Prisma.SortOrder;
     categoryId?: Prisma.SortOrderInput | Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -475,6 +486,7 @@ export type LehengaScalarWhereWithAggregatesInput = {
     pickupAvailable?: Prisma.BoolWithAggregatesFilter<"Lehenga"> | boolean;
     status?: Prisma.EnumProductStatusWithAggregatesFilter<"Lehenga"> | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolWithAggregatesFilter<"Lehenga"> | boolean;
+    isLatest?: Prisma.BoolWithAggregatesFilter<"Lehenga"> | boolean;
     isCategoryFeatured?: Prisma.BoolWithAggregatesFilter<"Lehenga"> | boolean;
     categoryId?: Prisma.StringNullableWithAggregatesFilter<"Lehenga"> | string | null;
     createdAt?: Prisma.DateTimeWithAggregatesFilter<"Lehenga"> | Date | string;
@@ -502,6 +514,7 @@ export type LehengaCreateInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -533,6 +546,7 @@ export type LehengaUncheckedCreateInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: string | null;
     createdAt?: Date | string;
@@ -564,6 +578,7 @@ export type LehengaUpdateInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -595,6 +610,7 @@ export type LehengaUncheckedUpdateInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -626,6 +642,7 @@ export type LehengaCreateManyInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: string | null;
     createdAt?: Date | string;
@@ -653,6 +670,7 @@ export type LehengaUpdateManyMutationInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -679,6 +697,7 @@ export type LehengaUncheckedUpdateManyInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -714,6 +733,7 @@ export type LehengaCountOrderByAggregateInput = {
     pickupAvailable?: Prisma.SortOrder;
     status?: Prisma.SortOrder;
     isFeatured?: Prisma.SortOrder;
+    isLatest?: Prisma.SortOrder;
     isCategoryFeatured?: Prisma.SortOrder;
     categoryId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -748,6 +768,7 @@ export type LehengaMaxOrderByAggregateInput = {
     pickupAvailable?: Prisma.SortOrder;
     status?: Prisma.SortOrder;
     isFeatured?: Prisma.SortOrder;
+    isLatest?: Prisma.SortOrder;
     isCategoryFeatured?: Prisma.SortOrder;
     categoryId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -775,6 +796,7 @@ export type LehengaMinOrderByAggregateInput = {
     pickupAvailable?: Prisma.SortOrder;
     status?: Prisma.SortOrder;
     isFeatured?: Prisma.SortOrder;
+    isLatest?: Prisma.SortOrder;
     isCategoryFeatured?: Prisma.SortOrder;
     categoryId?: Prisma.SortOrder;
     createdAt?: Prisma.SortOrder;
@@ -931,6 +953,7 @@ export type LehengaCreateWithoutCategoryInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -961,6 +984,7 @@ export type LehengaUncheckedCreateWithoutCategoryInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -1015,6 +1039,7 @@ export type LehengaScalarWhereInput = {
     pickupAvailable?: Prisma.BoolFilter<"Lehenga"> | boolean;
     status?: Prisma.EnumProductStatusFilter<"Lehenga"> | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFilter<"Lehenga"> | boolean;
+    isLatest?: Prisma.BoolFilter<"Lehenga"> | boolean;
     isCategoryFeatured?: Prisma.BoolFilter<"Lehenga"> | boolean;
     categoryId?: Prisma.StringNullableFilter<"Lehenga"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"Lehenga"> | Date | string;
@@ -1042,6 +1067,7 @@ export type LehengaCreateWithoutSizesInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -1072,6 +1098,7 @@ export type LehengaUncheckedCreateWithoutSizesInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: string | null;
     createdAt?: Date | string;
@@ -1115,6 +1142,7 @@ export type LehengaUpdateWithoutSizesInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1145,6 +1173,7 @@ export type LehengaUncheckedUpdateWithoutSizesInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1175,6 +1204,7 @@ export type LehengaCreateWithoutImagesInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -1205,6 +1235,7 @@ export type LehengaUncheckedCreateWithoutImagesInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: string | null;
     createdAt?: Date | string;
@@ -1248,6 +1279,7 @@ export type LehengaUpdateWithoutImagesInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1278,6 +1310,7 @@ export type LehengaUncheckedUpdateWithoutImagesInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1308,6 +1341,7 @@ export type LehengaCreateWithoutOrderItemsInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -1338,6 +1372,7 @@ export type LehengaUncheckedCreateWithoutOrderItemsInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: string | null;
     createdAt?: Date | string;
@@ -1381,6 +1416,7 @@ export type LehengaUpdateWithoutOrderItemsInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1411,6 +1447,7 @@ export type LehengaUncheckedUpdateWithoutOrderItemsInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1441,6 +1478,7 @@ export type LehengaCreateWithoutReviewsInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -1471,6 +1509,7 @@ export type LehengaUncheckedCreateWithoutReviewsInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: string | null;
     createdAt?: Date | string;
@@ -1514,6 +1553,7 @@ export type LehengaUpdateWithoutReviewsInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1544,6 +1584,7 @@ export type LehengaUncheckedUpdateWithoutReviewsInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     categoryId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1574,6 +1615,7 @@ export type LehengaCreateManyCategoryInput = {
     pickupAvailable?: boolean;
     status?: $Enums.ProductStatus;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -1600,6 +1642,7 @@ export type LehengaUpdateWithoutCategoryInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1630,6 +1673,7 @@ export type LehengaUncheckedUpdateWithoutCategoryInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1660,6 +1704,7 @@ export type LehengaUncheckedUpdateManyWithoutCategoryInput = {
     pickupAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     status?: Prisma.EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus;
     isFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+    isLatest?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     isCategoryFeatured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -1734,6 +1779,7 @@ export type LehengaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     pickupAvailable?: boolean;
     status?: boolean;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: boolean;
     createdAt?: boolean;
@@ -1767,6 +1813,7 @@ export type LehengaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
     pickupAvailable?: boolean;
     status?: boolean;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: boolean;
     createdAt?: boolean;
@@ -1795,6 +1842,7 @@ export type LehengaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
     pickupAvailable?: boolean;
     status?: boolean;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: boolean;
     createdAt?: boolean;
@@ -1823,12 +1871,13 @@ export type LehengaSelectScalar = {
     pickupAvailable?: boolean;
     status?: boolean;
     isFeatured?: boolean;
+    isLatest?: boolean;
     isCategoryFeatured?: boolean;
     categoryId?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
 };
-export type LehengaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "sku" | "shortDescription" | "description" | "designer" | "color" | "fabric" | "embroideryDetails" | "occasion" | "setIncludes" | "careInstructions" | "rentalPricePerDay" | "discountPercent" | "securityDeposit" | "originalPrice" | "minimumRentalDays" | "pickupAvailable" | "status" | "isFeatured" | "isCategoryFeatured" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["lehenga"]>;
+export type LehengaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "sku" | "shortDescription" | "description" | "designer" | "color" | "fabric" | "embroideryDetails" | "occasion" | "setIncludes" | "careInstructions" | "rentalPricePerDay" | "discountPercent" | "securityDeposit" | "originalPrice" | "minimumRentalDays" | "pickupAvailable" | "status" | "isFeatured" | "isLatest" | "isCategoryFeatured" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["lehenga"]>;
 export type LehengaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     category?: boolean | Prisma.Lehenga$categoryArgs<ExtArgs>;
     sizes?: boolean | Prisma.Lehenga$sizesArgs<ExtArgs>;
@@ -1874,6 +1923,7 @@ export type $LehengaPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
         pickupAvailable: boolean;
         status: $Enums.ProductStatus;
         isFeatured: boolean;
+        isLatest: boolean;
         isCategoryFeatured: boolean;
         categoryId: string | null;
         createdAt: Date;
@@ -2258,6 +2308,7 @@ export interface LehengaFieldRefs {
     readonly pickupAvailable: Prisma.FieldRef<"Lehenga", 'Boolean'>;
     readonly status: Prisma.FieldRef<"Lehenga", 'ProductStatus'>;
     readonly isFeatured: Prisma.FieldRef<"Lehenga", 'Boolean'>;
+    readonly isLatest: Prisma.FieldRef<"Lehenga", 'Boolean'>;
     readonly isCategoryFeatured: Prisma.FieldRef<"Lehenga", 'Boolean'>;
     readonly categoryId: Prisma.FieldRef<"Lehenga", 'String'>;
     readonly createdAt: Prisma.FieldRef<"Lehenga", 'DateTime'>;

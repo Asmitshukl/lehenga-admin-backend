@@ -107,6 +107,7 @@ export declare const LehengaScalarFieldEnum: {
     readonly pickupAvailable: "pickupAvailable";
     readonly status: "status";
     readonly isFeatured: "isFeatured";
+    readonly isLatest: "isLatest";
     readonly isCategoryFeatured: "isCategoryFeatured";
     readonly categoryId: "categoryId";
     readonly createdAt: "createdAt";

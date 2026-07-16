@@ -8,6 +8,7 @@ export declare const CategoryStyle: {
     readonly BRIDAL: "BRIDAL";
     readonly SEMI_BRIDAL: "SEMI_BRIDAL";
     readonly GOWN: "GOWN";
+    readonly KHADI: "KHADI";
     readonly JEWELLERY: "JEWELLERY";
 };
 export type CategoryStyle = (typeof CategoryStyle)[keyof typeof CategoryStyle];

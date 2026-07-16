@@ -474,12 +474,14 @@ publicRouter.get("/categories", asyncHandler(async (request, response) => {
 }));
 publicRouter.get("/lehengas", asyncHandler(async (request, response) => {
     const featuredOnly = request.query.featured === "true";
+    const latestOnly = request.query.latest === "true";
     await sendCachedCatalogResponse(response, ["lehengas", featuredOnly ? "featured" : "all"], () => prisma.lehenga.findMany({
         where: {
             status: {
                 not: ProductStatus.ARCHIVED,
             },
             ...(featuredOnly ? { isFeatured: true } : {}),
+            ...(latestOnly ? { isLatest: true } : {}),
         },
         orderBy: { createdAt: "desc" },
         include: publicLehengaInclude,
